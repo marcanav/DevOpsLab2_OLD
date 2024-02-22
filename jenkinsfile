@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // Replace with the actual path to your JDK installation
-        JAVA_HOME = "C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot" 
+        JAVA_HOME = "C:\\Program Files\\Microsoft\\jdk-11.0.16.101-hotspot" 
     }
     tools {
         // Install the Maven version configured as 'M3' and add it to the path.

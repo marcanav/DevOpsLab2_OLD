@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    environment {
+        // Replace with the actual path to your JDK installation
+        JAVA_HOME = "C:\Program Files\Microsoft\jdk-11.0.16.101-hotspot" 
+    }
     tools {
         // Install the Maven version configured as 'M3' and add it to the path.
         maven 'M3'
@@ -9,11 +12,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // Invoke the Maven build.
-                script {
-                    def mvnHome = tool 'M3'
-                    bat "${mvnHome}\\bin\\mvn clean install"
-                }
+                // Run the Maven build command
+                bat "${tool 'M3'}/bin/mvn -Dmaven.repo.local=${env.WORKSPACE}/.m2/repository clean install"
             }
         }
     }

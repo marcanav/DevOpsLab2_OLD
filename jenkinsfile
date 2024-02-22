@@ -12,9 +12,10 @@ pipeline {
                 // Invoke the Maven build.
                 script {
                     def mvnHome = tool 'M3'
-                    sh "${mvnHome}/bin/mvn clean install"
+                    bat "${mvnHome}\\bin\\mvn clean install"
                 }
             }
         }
     }
 }
+
